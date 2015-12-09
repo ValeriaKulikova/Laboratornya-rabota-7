@@ -1,0 +1,18 @@
+h:= FindWindow(nil,'1.txt - AkelPad');
+ canvas:=tcanvas.create; // Создаём канву
+ dc:=getdc(hnd); // Получаем дескриптор кнопки
+with canvas do
+begin
+handle:=dc; // теперь с поверхностью кнопки можно работать,как с простой канвой
+rectangle(0,0,100,100); // рисуем прямоугольник на кнопке
+font.color:=$0000ff; // ставим красный цвет шрифта
+textout(10,0,'Нажми');
+textout(13,10,'меня'); //выводим текст
+free; // освобождаем память
+end;
+releasedc(0,dc);
+end;
+
+
+ canvas:tcanvas;
+ dc:hdc;
